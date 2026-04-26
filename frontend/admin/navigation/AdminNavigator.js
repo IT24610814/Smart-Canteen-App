@@ -15,8 +15,8 @@ const AdminTabs = ({ onSignOut }) => {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarActiveTintColor: '#1abc9c',
-        tabBarInactiveTintColor: '#bdc3c7',
+        tabBarActiveTintColor: '#38bdf8',
+        tabBarInactiveTintColor: '#94a3b8',
         tabBarIcon: ({ focused, color, size }) => {
           let iconName = 'ellipse';
           const routeName = route.name.toLowerCase();
@@ -33,7 +33,7 @@ const AdminTabs = ({ onSignOut }) => {
         },
         tabBarAllowFontScaling: false,
         tabBarLabelStyle: { paddingBottom: 0, fontSize: 11, marginBottom: 2 },
-        tabBarStyle: { height: 65, paddingBottom: 5, paddingTop: 5 }
+        tabBarStyle: { height: 65, paddingBottom: 5, paddingTop: 5, backgroundColor: '#0f172a', borderTopColor: '#334155', borderTopWidth: 1 }
       })}
     >
       <Tab.Screen name="Dashboard" component={AdminDashboard} />

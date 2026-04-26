@@ -265,12 +265,13 @@ const CustomerManagement = () => {
         placeholder="Search by customer name, user ID, or username"
         value={search}
         onChangeText={setSearch}
+        placeholderTextColor="#94a3b8"
       />
 
       {!!error && <Text style={styles.errorText}>{error}</Text>}
 
       {loading ? (
-        <ActivityIndicator size="large" color="#1abc9c" style={styles.loader} />
+        <ActivityIndicator size="large" color="#38bdf8" style={styles.loader} />
       ) : (
         <FlatList
           data={customers}
@@ -289,17 +290,17 @@ const CustomerManagement = () => {
               <Text style={styles.modalTitle}>Edit Customer</Text>
               <Text numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1.2} style={styles.readOnlyText}>User ID: {formatDisplay(editForm.userId)}</Text>
               <Text style={styles.fieldLabel}>Full Name</Text>
-              <TextInput style={styles.input} placeholder="Full Name" value={editForm.fullName} onChangeText={(value) => updateField('fullName', value)} />
+              <TextInput style={styles.input} placeholder="Full Name" value={editForm.fullName} onChangeText={(value) => updateField('fullName', value)} placeholderTextColor="#94a3b8" />
               <Text numberOfLines={1} adjustsFontSizeToFit maxFontSizeMultiplier={1.2} style={styles.fieldLabel}>Username</Text>
-              <TextInput style={styles.input} placeholder="Username" value={editForm.username} onChangeText={(value) => updateField('username', value)} autoCapitalize="none" />
+              <TextInput style={styles.input} placeholder="Username" value={editForm.username} onChangeText={(value) => updateField('username', value)} autoCapitalize="none" placeholderTextColor="#94a3b8" />
               <Text style={styles.fieldLabel}>NIC</Text>
-              <TextInput style={styles.input} placeholder="NIC" value={editForm.nic} onChangeText={(value) => updateField('nic', value)} autoCapitalize="characters" />
+              <TextInput style={styles.input} placeholder="NIC" value={editForm.nic} onChangeText={(value) => updateField('nic', value)} autoCapitalize="characters" placeholderTextColor="#94a3b8" />
               <Text style={styles.fieldLabel}>Email</Text>
-              <TextInput style={styles.input} placeholder="Email" value={editForm.email} onChangeText={(value) => updateField('email', value)} autoCapitalize="none" keyboardType="email-address" />
+              <TextInput style={styles.input} placeholder="Email" value={editForm.email} onChangeText={(value) => updateField('email', value)} autoCapitalize="none" keyboardType="email-address" placeholderTextColor="#94a3b8" />
               <Text style={styles.fieldLabel}>Phone</Text>
-              <TextInput style={styles.input} placeholder="Phone" value={editForm.phone} onChangeText={(value) => updateField('phone', value)} keyboardType="phone-pad" />
+              <TextInput style={styles.input} placeholder="Phone" value={editForm.phone} onChangeText={(value) => updateField('phone', value)} keyboardType="phone-pad" placeholderTextColor="#94a3b8" />
               <Text style={styles.fieldLabel}>Address</Text>
-              <TextInput style={styles.input} placeholder="Address" value={editForm.address} onChangeText={(value) => updateField('address', value)} />
+              <TextInput style={styles.input} placeholder="Address" value={editForm.address} onChangeText={(value) => updateField('address', value)} placeholderTextColor="#94a3b8" />
               <Text style={styles.fieldLabel}>Date of Birth</Text>
               {Platform.OS === 'web' ? (
                 <WebDateInput
@@ -347,12 +348,13 @@ const CustomerManagement = () => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f3f5f8', padding: 14 },
-  title: { fontSize: 24, fontWeight: '700', color: '#1f2937', marginBottom: 10 },
+  container: { flex: 1, backgroundColor: '#0f172a', padding: 14 },
+  title: { fontSize: 24, fontWeight: '700', color: '#f8fafc', marginBottom: 10 },
   input: {
-    backgroundColor: '#fff',
+    backgroundColor: '#0f172a',
+    color: '#f8fafc',
     borderWidth: 1,
-    borderColor: '#d1d5db',
+    borderColor: '#334155',
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 10,
@@ -360,41 +362,42 @@ const styles = StyleSheet.create({
   },
   loader: { marginTop: 20 },
   listContent: { paddingBottom: 30 },
-  card: { backgroundColor: '#fff', borderRadius: 10, padding: 12, marginBottom: 10, elevation: 1 },
+  card: { backgroundColor: '#1e293b', borderRadius: 10, padding: 12, marginBottom: 10, elevation: 1 },
   cardHeader: { flexDirection: 'row', justifyContent: 'space-between', gap: 12 },
-  name: { fontWeight: '700', color: '#111827', fontSize: 16, flex: 1 },
-  userId: { color: '#0f766e', fontWeight: '700' },
-  meta: { color: '#475569', marginTop: 2 },
+  name: { fontWeight: '700', color: '#f8fafc', fontSize: 16, flex: 1 },
+  userId: { color: '#38bdf8', fontWeight: '700' },
+  meta: { color: '#94a3b8', marginTop: 2 },
   actionsRow: { flexDirection: 'row', gap: 10, marginTop: 10 },
-  editBtn: { flex: 1, backgroundColor: '#0ea5a2', borderRadius: 8, alignItems: 'center', paddingVertical: 10, marginTop: 10 },
-  editBtnText: { color: '#fff', fontWeight: '700' },
+  editBtn: { flex: 1, backgroundColor: '#2563eb', borderRadius: 8, alignItems: 'center', paddingVertical: 10, marginTop: 10 },
+  editBtnText: { color: '#ffffff', fontWeight: '700' },
   deleteBtn: { flex: 1, backgroundColor: '#ef4444', borderRadius: 8, alignItems: 'center', paddingVertical: 10, marginTop: 10 },
-  deleteBtnText: { color: '#fff', fontWeight: '700' },
-  secondaryBtn: { borderWidth: 1, borderColor: '#94a3b8', borderRadius: 8, alignItems: 'center', paddingVertical: 10, marginTop: 8 },
-  secondaryBtnText: { color: '#334155', fontWeight: '600' },
-  errorText: { color: '#dc2626', marginBottom: 6 },
-  emptyText: { textAlign: 'center', color: '#64748b', marginTop: 20 },
+  deleteBtnText: { color: '#ffffff', fontWeight: '700' },
+  secondaryBtn: { borderWidth: 1, borderColor: '#334155', backgroundColor: '#0f172a', borderRadius: 8, alignItems: 'center', paddingVertical: 10, marginTop: 8 },
+  secondaryBtnText: { color: '#94a3b8', fontWeight: '600' },
+  errorText: { color: '#ef4444', marginBottom: 6 },
+  emptyText: { textAlign: 'center', color: '#94a3b8', marginTop: 20 },
   modalBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.35)', justifyContent: 'center', padding: 14 },
-  modalCard: { backgroundColor: '#fff', borderRadius: 12, padding: 14, maxHeight: '92%' },
-  modalTitle: { fontSize: 20, fontWeight: '700', marginBottom: 10, color: '#1f2937' },
-  readOnlyText: { color: '#475569', marginBottom: 8, fontWeight: '600' },
-  fieldLabel: { color: '#374151', fontSize: 13, fontWeight: '600', marginBottom: 4, marginTop: 2 },
+  modalCard: { backgroundColor: '#1e293b', borderRadius: 12, padding: 14, maxHeight: '92%' },
+  modalTitle: { fontSize: 20, fontWeight: '700', marginBottom: 10, color: '#f8fafc' },
+  readOnlyText: { color: '#94a3b8', marginBottom: 8, fontWeight: '600' },
+  fieldLabel: { color: '#94a3b8', fontSize: 13, fontWeight: '600', marginBottom: 4, marginTop: 2 },
   dateInput: {
-    backgroundColor: '#fff',
+    backgroundColor: '#0f172a',
     borderWidth: 1,
-    borderColor: '#d1d5db',
+    borderColor: '#334155',
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 12,
     marginBottom: 8
   },
-  datePlaceholder: { color: '#9ca3af', fontSize: 15 },
-  dateValue: { color: '#111827', fontSize: 15 },
+  datePlaceholder: { color: '#94a3b8', fontSize: 15 },
+  dateValue: { color: '#f8fafc', fontSize: 15 },
   webDateInput: {
     width: '100%',
-    backgroundColor: '#fff',
+    backgroundColor: '#0f172a',
+    color: '#f8fafc',
     borderWidth: 1,
-    borderColor: '#d1d5db',
+    borderColor: '#334155',
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 12,
