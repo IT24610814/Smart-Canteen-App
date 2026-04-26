@@ -420,7 +420,7 @@ const ProfileScreen = ({ userRole }) => {
   );
 
   if (loading && !profile) {
-    return <ActivityIndicator size="large" color="#1abc9c" style={styles.loader} />;
+    return <ActivityIndicator size="large" color="#38bdf8" style={styles.loader} />;
   }
 
   return (
@@ -480,17 +480,17 @@ const ProfileScreen = ({ userRole }) => {
             <ScrollView>
               <Text allowFontScaling={false} style={styles.modalTitle}>Edit Profile</Text>
               <Text allowFontScaling={false} style={styles.fieldLabel}>Full Name</Text>
-              <TextInput allowFontScaling={false} style={styles.input} placeholder="Full Name" value={editForm.fullName} onChangeText={(value) => updateEditField('fullName', value)} />
+              <TextInput allowFontScaling={false} style={styles.input} placeholder="Full Name" value={editForm.fullName} onChangeText={(value) => updateEditField('fullName', value)} placeholderTextColor="#94a3b8" />
               <Text allowFontScaling={false} style={styles.fieldLabel}>Username</Text>
-              <TextInput allowFontScaling={false} style={styles.input} placeholder="Username" value={editForm.username} onChangeText={(value) => updateEditField('username', value)} autoCapitalize="none" />
+              <TextInput allowFontScaling={false} style={styles.input} placeholder="Username" value={editForm.username} onChangeText={(value) => updateEditField('username', value)} autoCapitalize="none" placeholderTextColor="#94a3b8" />
               <Text allowFontScaling={false} style={styles.fieldLabel}>NIC</Text>
-              <TextInput allowFontScaling={false} style={styles.input} placeholder="NIC" value={editForm.nic} onChangeText={(value) => updateEditField('nic', value)} autoCapitalize="characters" />
+              <TextInput allowFontScaling={false} style={styles.input} placeholder="NIC" value={editForm.nic} onChangeText={(value) => updateEditField('nic', value)} autoCapitalize="characters" placeholderTextColor="#94a3b8" />
               <Text allowFontScaling={false} style={styles.fieldLabel}>Email</Text>
-              <TextInput allowFontScaling={false} style={styles.input} placeholder="Email" value={editForm.email} onChangeText={(value) => updateEditField('email', value)} autoCapitalize="none" keyboardType="email-address" />
+              <TextInput allowFontScaling={false} style={styles.input} placeholder="Email" value={editForm.email} onChangeText={(value) => updateEditField('email', value)} autoCapitalize="none" keyboardType="email-address" placeholderTextColor="#94a3b8" />
               <Text allowFontScaling={false} style={styles.fieldLabel}>Phone</Text>
-              <TextInput allowFontScaling={false} style={styles.input} placeholder="Phone (10 digits)" value={editForm.phone} onChangeText={(value) => updateEditField('phone', value)} keyboardType="phone-pad" />
+              <TextInput allowFontScaling={false} style={styles.input} placeholder="Phone (10 digits)" value={editForm.phone} onChangeText={(value) => updateEditField('phone', value)} keyboardType="phone-pad" placeholderTextColor="#94a3b8" />
               <Text allowFontScaling={false} style={styles.fieldLabel}>Address</Text>
-              <TextInput allowFontScaling={false} style={styles.input} placeholder="Address" value={editForm.address} onChangeText={(value) => updateEditField('address', value)} />
+              <TextInput allowFontScaling={false} style={styles.input} placeholder="Address" value={editForm.address} onChangeText={(value) => updateEditField('address', value)} placeholderTextColor="#94a3b8" />
               <Text allowFontScaling={false} style={styles.fieldLabel}>Date of Birth</Text>
               {Platform.OS === 'web' ? (
                 <WebDateInput
@@ -556,6 +556,7 @@ const ProfileScreen = ({ userRole }) => {
               onChangeText={(value) => updatePasswordField('currentPassword', value)} 
               secureTextEntry
               editable={!passwordSaving}
+              placeholderTextColor="#94a3b8"
             />
             <TextInput allowFontScaling={false} 
               style={styles.input} 
@@ -564,6 +565,7 @@ const ProfileScreen = ({ userRole }) => {
               onChangeText={(value) => updatePasswordField('newPassword', value)} 
               secureTextEntry
               editable={!passwordSaving}
+              placeholderTextColor="#94a3b8"
             />
             <TextInput allowFontScaling={false} 
               style={styles.input} 
@@ -572,6 +574,7 @@ const ProfileScreen = ({ userRole }) => {
               onChangeText={(value) => updatePasswordField('confirmPassword', value)} 
               secureTextEntry
               editable={!passwordSaving}
+              placeholderTextColor="#94a3b8"
             />
 
             {!!passwordMessage && (
@@ -617,7 +620,7 @@ const ProfileScreen = ({ userRole }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f3f5f8'
+    backgroundColor: '#0f172a'
   },
   content: {
     padding: 16,
@@ -629,7 +632,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: '700',
-    color: '#1f2937',
+    color: '#f8fafc',
     marginBottom: 10
   },
   errorText: {
@@ -641,7 +644,7 @@ const styles = StyleSheet.create({
     marginBottom: 8
   },
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: '#1e293b',
     borderRadius: 14,
     padding: 16,
     elevation: 2
@@ -652,17 +655,17 @@ const styles = StyleSheet.create({
     borderRadius: 70,
     alignSelf: 'center',
     marginBottom: 12,
-    backgroundColor: '#e5e7eb'
+    backgroundColor: '#334155'
   },
   name: {
     textAlign: 'center',
     fontSize: 22,
     fontWeight: '700',
-    color: '#111827'
+    color: '#f8fafc'
   },
   role: {
     textAlign: 'center',
-    color: '#0f766e',
+    color: '#38bdf8',
     textTransform: 'capitalize',
     marginTop: 4,
     marginBottom: 14,
@@ -673,17 +676,17 @@ const styles = StyleSheet.create({
   },
   detailRow: {
     borderBottomWidth: 1,
-    borderBottomColor: '#e5e7eb',
+    borderBottomColor: '#334155',
     paddingBottom: 8
   },
   detailLabel: {
-    color: '#6b7280',
+    color: '#94a3b8',
     fontSize: 12,
     fontWeight: '700',
     marginBottom: 2
   },
   detailValue: {
-    color: '#1f2937',
+    color: '#f8fafc',
     fontSize: 15
   },
   actionRow: {
@@ -693,7 +696,7 @@ const styles = StyleSheet.create({
   },
   smallButton: {
     flex: 1,
-    backgroundColor: '#0ea5a2',
+    backgroundColor: '#2563eb',
     borderRadius: 8,
     alignItems: 'center',
     paddingVertical: 10
@@ -707,14 +710,14 @@ const styles = StyleSheet.create({
     fontSize: 12
   },
   primaryButton: {
-    backgroundColor: '#0ea5a2',
+    backgroundColor: '#2563eb',
     borderRadius: 8,
     alignItems: 'center',
     paddingVertical: 12,
     marginTop: 10
   },
   buttonDisabled: {
-    backgroundColor: '#9ca3af',
+    backgroundcolor: '#94a3b8',
     opacity: 0.6
   },
   primaryButtonText: {
@@ -728,14 +731,15 @@ const styles = StyleSheet.create({
   },
   secondaryButton: {
     borderWidth: 1,
-    borderColor: '#94a3b8',
+    borderColor: '#334155',
+    backgroundColor: '#0f172a',
     borderRadius: 8,
     alignItems: 'center',
     paddingVertical: 11,
     marginTop: 8
   },
   secondaryButtonText: {
-    color: '#334155',
+    color: '#94a3b8',
     fontWeight: '600'
   },
   logoutButton: {
@@ -756,7 +760,7 @@ const styles = StyleSheet.create({
     padding: 14
   },
   modalCard: {
-    backgroundColor: '#fff',
+    backgroundColor: '#1e293b',
     borderRadius: 12,
     padding: 14,
     maxHeight: '92%'
@@ -765,46 +769,48 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '700',
     marginBottom: 10,
-    color: '#1f2937'
+    color: '#f8fafc'
   },
   fieldLabel: {
-    color: '#374151',
+    color: '#94a3b8',
     fontSize: 13,
     fontWeight: '600',
     marginBottom: 4,
     marginTop: 2
   },
   input: {
-    backgroundColor: '#fff',
+    backgroundColor: '#0f172a',
+    color: '#f8fafc',
     borderWidth: 1,
-    borderColor: '#d1d5db',
+    borderColor: '#334155',
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 10,
     marginBottom: 8
   },
   dateInput: {
-    backgroundColor: '#fff',
+    backgroundColor: '#0f172a',
     borderWidth: 1,
-    borderColor: '#d1d5db',
+    borderColor: '#334155',
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 12,
     marginBottom: 8
   },
   datePlaceholder: {
-    color: '#9ca3af',
+    color: '#94a3b8',
     fontSize: 15
   },
   dateValue: {
-    color: '#111827',
+    color: '#f8fafc',
     fontSize: 15
   },
   webDateInput: {
     width: '100%',
-    backgroundColor: '#fff',
+    backgroundColor: '#0f172a',
+    color: '#f8fafc',
     borderWidth: 1,
-    borderColor: '#d1d5db',
+    borderColor: '#334155',
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 12,

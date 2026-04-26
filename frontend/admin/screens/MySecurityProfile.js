@@ -212,7 +212,7 @@ const MySecurityProfile = ({ onSignOut }) => {
   };
 
   if (loading && !profile) {
-    return <ActivityIndicator size="large" color="#1abc9c" style={{ marginTop: 30 }} />;
+    return <ActivityIndicator size="large" color="#38bdf8" style={{ marginTop: 30 }} />;
   }
 
   return (
@@ -274,10 +274,10 @@ const MySecurityProfile = ({ onSignOut }) => {
         <View style={styles.modalBackdrop}>
           <View style={styles.modalCard}>
             <Text allowFontScaling={false} style={styles.modalTitle}>Edit Profile</Text>
-            <TextInput allowFontScaling={false} style={styles.input} placeholder="Full Name" value={editForm.fullName} onChangeText={(v) => updateEditField('fullName', v)} />
-            <TextInput allowFontScaling={false} style={styles.input} placeholder="Email" value={editForm.email} onChangeText={(v) => updateEditField('email', v)} autoCapitalize="none" />
-            <TextInput allowFontScaling={false} style={styles.input} placeholder="Phone" value={editForm.phone} onChangeText={(v) => updateEditField('phone', v)} />
-            <TextInput allowFontScaling={false} style={styles.input} placeholder="Address" value={editForm.address} onChangeText={(v) => updateEditField('address', v)} />
+            <TextInput allowFontScaling={false} style={styles.input} placeholder="Full Name" value={editForm.fullName} onChangeText={(v) => updateEditField('fullName', v)} placeholderTextColor="#94a3b8" />
+            <TextInput allowFontScaling={false} style={styles.input} placeholder="Email" value={editForm.email} onChangeText={(v) => updateEditField('email', v)} autoCapitalize="none" placeholderTextColor="#94a3b8" />
+            <TextInput allowFontScaling={false} style={styles.input} placeholder="Phone" value={editForm.phone} onChangeText={(v) => updateEditField('phone', v)} placeholderTextColor="#94a3b8" />
+            <TextInput allowFontScaling={false} style={styles.input} placeholder="Address" value={editForm.address} onChangeText={(v) => updateEditField('address', v)} placeholderTextColor="#94a3b8" />
             <Text allowFontScaling={false} style={styles.fieldLabel}>Date of Birth</Text>
             {Platform.OS === 'web' ? (
               <input
@@ -333,9 +333,9 @@ const MySecurityProfile = ({ onSignOut }) => {
         <View style={styles.modalBackdrop}>
           <View style={styles.modalCard}>
             <Text allowFontScaling={false} style={styles.modalTitle}>Change Password</Text>
-            <TextInput allowFontScaling={false} style={styles.input} placeholder="Current Password" value={passwordForm.currentPassword} onChangeText={(v) => updatePasswordField('currentPassword', v)} secureTextEntry />
-            <TextInput allowFontScaling={false} style={styles.input} placeholder="New Password" value={passwordForm.newPassword} onChangeText={(v) => updatePasswordField('newPassword', v)} secureTextEntry />
-            <TextInput allowFontScaling={false} style={styles.input} placeholder="Confirm New Password" value={passwordForm.confirmPassword} onChangeText={(v) => updatePasswordField('confirmPassword', v)} secureTextEntry />
+            <TextInput allowFontScaling={false} style={styles.input} placeholder="Current Password" value={passwordForm.currentPassword} onChangeText={(v) => updatePasswordField('currentPassword', v)} secureTextEntry placeholderTextColor="#94a3b8" />
+            <TextInput allowFontScaling={false} style={styles.input} placeholder="New Password" value={passwordForm.newPassword} onChangeText={(v) => updatePasswordField('newPassword', v)} secureTextEntry placeholderTextColor="#94a3b8" />
+            <TextInput allowFontScaling={false} style={styles.input} placeholder="Confirm New Password" value={passwordForm.confirmPassword} onChangeText={(v) => updatePasswordField('confirmPassword', v)} secureTextEntry placeholderTextColor="#94a3b8" />
 
             {!!passwordMessage && (
               <Text allowFontScaling={false} style={passwordMessageType === 'success' ? styles.successText : styles.errorText}>
@@ -364,43 +364,44 @@ const MySecurityProfile = ({ onSignOut }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f3f5f8' },
+  container: { flex: 1, backgroundColor: '#0f172a' },
   content: { padding: 16, paddingBottom: 20 },
-  title: { fontSize: 24, fontWeight: '700', color: '#1f2937', marginBottom: 10 },
-  card: { backgroundColor: '#fff', borderRadius: 12, padding: 14, elevation: 1 },
+  title: { fontSize: 24, fontWeight: '700', color: '#f8fafc', marginBottom: 10 },
+  card: { backgroundColor: '#1e293b', borderRadius: 12, padding: 14, elevation: 1 },
   avatar: { width: 120, height: 120, borderRadius: 60, alignSelf: 'center', marginBottom: 10, backgroundColor: '#e5e7eb' },
-  name: { textAlign: 'center', fontSize: 20, fontWeight: '700', color: '#111827', marginBottom: 6 },
-  meta: { color: '#475569', marginTop: 2 },
+  name: { textAlign: 'center', fontSize: 20, fontWeight: '700', color: '#f8fafc', marginBottom: 6 },
+  meta: { color: '#94a3b8', marginTop: 2 },
   rowButtons: { flexDirection: 'row', gap: 10, marginTop: 12 },
-  smallButton: { flex: 1, backgroundColor: '#0ea5a2', borderRadius: 8, alignItems: 'center', paddingVertical: 10 },
+  smallButton: { flex: 1, backgroundColor: '#2563eb', borderRadius: 8, alignItems: 'center', paddingVertical: 10 },
   warnButton: { backgroundColor: '#f59e0b' },
-  smallButtonText: { color: '#fff', fontWeight: '700', fontSize: 12 },
-  primaryButton: { backgroundColor: '#0ea5a2', borderRadius: 8, alignItems: 'center', paddingVertical: 12, marginTop: 10 },
-  primaryButtonText: { color: '#fff', fontWeight: '700' },
-  secondaryButton: { borderWidth: 1, borderColor: '#94a3b8', borderRadius: 8, alignItems: 'center', paddingVertical: 11, marginTop: 8 },
-  secondaryButtonText: { color: '#334155', fontWeight: '600' },
+  smallButtonText: { color: '#ffffff', fontWeight: '700', fontSize: 12 },
+  primaryButton: { backgroundColor: '#2563eb', borderRadius: 8, alignItems: 'center', paddingVertical: 12, marginTop: 10 },
+  primaryButtonText: { color: '#ffffff', fontWeight: '700' },
+  secondaryButton: { borderWidth: 1, borderColor: '#334155', backgroundColor: '#0f172a', borderRadius: 8, alignItems: 'center', paddingVertical: 11, marginTop: 8 },
+  secondaryButtonText: { color: '#94a3b8', fontWeight: '600' },
   logoutButton: { backgroundColor: '#ef4444', borderRadius: 8, alignItems: 'center', paddingVertical: 12, marginTop: 10 },
-  logoutButtonText: { color: '#fff', fontWeight: '700' },
+  logoutButtonText: { color: '#ffffff', fontWeight: '700' },
   modalBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.35)', justifyContent: 'center', padding: 14 },
-  modalCard: { backgroundColor: '#fff', borderRadius: 12, padding: 14 },
-  modalTitle: { fontSize: 20, fontWeight: '700', marginBottom: 10, color: '#1f2937' },
-  fieldLabel: { color: '#374151', fontSize: 13, fontWeight: '600', marginBottom: 4, marginTop: 2 },
+  modalCard: { backgroundColor: '#1e293b', borderRadius: 12, padding: 14 },
+  modalTitle: { fontSize: 20, fontWeight: '700', marginBottom: 10, color: '#f8fafc' },
+  fieldLabel: { color: '#94a3b8', fontSize: 13, fontWeight: '600', marginBottom: 4, marginTop: 2 },
   dateInput: {
-    backgroundColor: '#fff',
+    backgroundColor: '#0f172a',
     borderWidth: 1,
-    borderColor: '#d1d5db',
+    borderColor: '#334155',
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 12,
     marginBottom: 8
   },
-  datePlaceholder: { color: '#9ca3af', fontSize: 15 },
-  dateValue: { color: '#111827', fontSize: 15 },
+  datePlaceholder: { color: '#94a3b8', fontSize: 15 },
+  dateValue: { color: '#f8fafc', fontSize: 15 },
   webDateInput: {
     width: '100%',
-    backgroundColor: '#fff',
+    backgroundColor: '#0f172a',
+    color: '#f8fafc',
     borderWidth: 1,
-    borderColor: '#d1d5db',
+    borderColor: '#334155',
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 12,
@@ -409,16 +410,17 @@ const styles = StyleSheet.create({
     boxSizing: 'border-box'
   },
   input: {
-    backgroundColor: '#fff',
+    backgroundColor: '#0f172a',
+    color: '#f8fafc',
     borderWidth: 1,
-    borderColor: '#d1d5db',
+    borderColor: '#334155',
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 10,
     marginBottom: 8
   },
-  errorText: { color: '#dc2626', marginBottom: 8 },
-  successText: { color: '#16a34a', marginBottom: 8 }
+  errorText: { color: '#ef4444', marginBottom: 8 },
+  successText: { color: '#38bdf8', marginBottom: 8 }
 });
 
 export default MySecurityProfile;

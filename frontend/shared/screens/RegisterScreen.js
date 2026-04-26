@@ -129,7 +129,7 @@ const RegisterScreen = ({ navigation, onSignIn }) => {
           value={form.fullName}
           onChangeText={(value) => updateField('fullName', value)}
           editable={!loading}
-          placeholderTextColor="#999"
+          placeholderTextColor="#94a3b8"
         />
 
         <TextInput
@@ -138,7 +138,7 @@ const RegisterScreen = ({ navigation, onSignIn }) => {
           value={form.username}
           onChangeText={(value) => updateField('username', value)}
           editable={!loading}
-          placeholderTextColor="#999"
+          placeholderTextColor="#94a3b8"
           autoCapitalize="none"
         />
 
@@ -148,7 +148,7 @@ const RegisterScreen = ({ navigation, onSignIn }) => {
           value={form.nic}
           onChangeText={(value) => updateField('nic', value)}
           editable={!loading}
-          placeholderTextColor="#999"
+          placeholderTextColor="#94a3b8"
           autoCapitalize="characters"
         />
 
@@ -158,7 +158,7 @@ const RegisterScreen = ({ navigation, onSignIn }) => {
           value={form.email}
           onChangeText={(value) => updateField('email', value)}
           editable={!loading}
-          placeholderTextColor="#999"
+          placeholderTextColor="#94a3b8"
           keyboardType="email-address"
           autoCapitalize="none"
         />
@@ -169,7 +169,7 @@ const RegisterScreen = ({ navigation, onSignIn }) => {
           value={form.phone}
           onChangeText={(value) => updateField('phone', value)}
           editable={!loading}
-          placeholderTextColor="#999"
+          placeholderTextColor="#94a3b8"
           keyboardType="phone-pad"
         />
 
@@ -179,7 +179,7 @@ const RegisterScreen = ({ navigation, onSignIn }) => {
           value={form.address}
           onChangeText={(value) => updateField('address', value)}
           editable={!loading}
-          placeholderTextColor="#999"
+          placeholderTextColor="#94a3b8"
         />
 
         {Platform.OS === 'web' ? (
@@ -224,7 +224,7 @@ const RegisterScreen = ({ navigation, onSignIn }) => {
           value={form.password}
           onChangeText={(value) => updateField('password', value)}
           editable={!loading}
-          placeholderTextColor="#999"
+          placeholderTextColor="#94a3b8"
           secureTextEntry
         />
 
@@ -234,7 +234,7 @@ const RegisterScreen = ({ navigation, onSignIn }) => {
           value={form.confirmPassword}
           onChangeText={(value) => updateField('confirmPassword', value)}
           editable={!loading}
-          placeholderTextColor="#999"
+          placeholderTextColor="#94a3b8"
           secureTextEntry
         />
 
@@ -262,87 +262,104 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 20,
     paddingVertical: 30,
-    backgroundColor: '#f5f5f5'
+    backgroundColor: '#0f172a'
   },
   title: {
-    fontSize: 30,
-    fontWeight: 'bold',
+    fontSize: 32,
+    fontWeight: '800',
     textAlign: 'center',
-    color: '#1abc9c'
+    color: '#38bdf8',
+    letterSpacing: 1,
+    marginBottom: 6,
   },
   subtitle: {
     fontSize: 16,
     textAlign: 'center',
-    color: '#7f8c8d',
-    marginTop: 6,
-    marginBottom: 24
+    color: '#94a3b8',
+    marginBottom: 30,
+    letterSpacing: 0.5,
   },
   formContainer: {
-    backgroundColor: '#fff',
-    padding: 20,
-    borderRadius: 12,
-    elevation: 4
+    backgroundColor: '#1e293b',
+    padding: 25,
+    borderRadius: 16,
+    elevation: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
   },
   input: {
+    backgroundColor: '#0f172a',
     borderWidth: 1,
-    borderColor: '#ddd',
-    padding: 12,
-    marginBottom: 12,
-    borderRadius: 8,
+    borderColor: '#334155',
+    color: '#f8fafc',
+    padding: 15,
+    marginBottom: 15,
+    borderRadius: 10,
     fontSize: 16
   },
   dateInput: {
+    backgroundColor: '#0f172a',
     borderWidth: 1,
-    borderColor: '#ddd',
-    padding: 12,
-    marginBottom: 12,
-    borderRadius: 8,
-    backgroundColor: '#fff'
+    borderColor: '#334155',
+    padding: 15,
+    marginBottom: 15,
+    borderRadius: 10,
   },
   datePlaceholder: {
-    color: '#999',
+    color: '#94a3b8',
     fontSize: 16
   },
   dateValue: {
-    color: '#111827',
+    color: '#f8fafc',
     fontSize: 16
   },
   webDateInput: {
     width: '100%',
+    backgroundColor: '#0f172a',
     borderWidth: 1,
-    borderColor: '#ddd',
-    padding: 12,
-    marginBottom: 12,
-    borderRadius: 8,
+    borderColor: '#334155',
+    color: '#f8fafc',
+    padding: 15,
+    marginBottom: 15,
+    borderRadius: 10,
     fontSize: 16,
-    backgroundColor: '#fff',
     boxSizing: 'border-box'
   },
   button: {
-    backgroundColor: '#1abc9c',
-    padding: 14,
-    borderRadius: 8,
+    backgroundColor: '#2563eb',
+    padding: 16,
+    borderRadius: 10,
     alignItems: 'center',
-    marginTop: 8
+    marginTop: 15,
+    elevation: 3,
+    shadowColor: '#2563eb',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.4,
+    shadowRadius: 5,
   },
   buttonDisabled: {
     opacity: 0.6
   },
   buttonText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 16,
-    fontWeight: 'bold'
+    fontWeight: '700',
+    letterSpacing: 0.5,
   },
   errorText: {
-    color: '#e74c3c',
+    color: '#ef4444',
     textAlign: 'center',
-    marginBottom: 8
+    marginBottom: 10,
+    fontWeight: '600',
   },
   linkText: {
-    color: '#1abc9c',
+    color: '#38bdf8',
     textAlign: 'center',
-    marginTop: 14,
-    textDecorationLine: 'underline'
+    marginTop: 20,
+    fontWeight: '600',
+    textDecorationLine: 'none',
   }
 });
 

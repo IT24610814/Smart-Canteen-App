@@ -67,7 +67,7 @@ const LoginScreen = ({ navigation, onSignIn }) => {
           value={username}
           onChangeText={setUsername}
           editable={!loading}
-          placeholderTextColor="#999"
+          placeholderTextColor="#94a3b8"
         />
 
         <TextInput
@@ -77,7 +77,7 @@ const LoginScreen = ({ navigation, onSignIn }) => {
           value={password}
           onChangeText={setPassword}
           editable={!loading}
-          placeholderTextColor="#999"
+          placeholderTextColor="#94a3b8"
         />
 
         {error ? <Text allowFontScaling={false} style={styles.errorText}>{error}</Text> : null}
@@ -109,60 +109,76 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     paddingHorizontal: 20,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#0f172a',
   },
   title: {
-    fontSize: 32,
-    fontWeight: 'bold',
+    fontSize: 34,
+    fontWeight: '800',
     textAlign: 'center',
-    color: '#1abc9c',
+    color: '#38bdf8',
     marginBottom: 10,
+    letterSpacing: 1,
   },
   subtitle: {
     fontSize: 16,
     textAlign: 'center',
-    color: '#7f8c8d',
+    color: '#94a3b8',
     marginBottom: 40,
+    letterSpacing: 0.5,
   },
   formContainer: {
-    backgroundColor: '#fff',
-    padding: 20,
-    borderRadius: 10,
-    elevation: 5,
+    backgroundColor: '#1e293b',
+    padding: 25,
+    borderRadius: 16,
+    elevation: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
   },
   input: {
+    backgroundColor: '#0f172a',
     borderWidth: 1,
-    borderColor: '#ddd',
-    padding: 12,
+    borderColor: '#334155',
+    color: '#f8fafc',
+    padding: 15,
     marginBottom: 15,
-    borderRadius: 8,
+    borderRadius: 10,
     fontSize: 16,
   },
   button: {
-    backgroundColor: '#1abc9c',
-    padding: 15,
-    borderRadius: 8,
+    backgroundColor: '#2563eb',
+    padding: 16,
+    borderRadius: 10,
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: 15,
+    elevation: 3,
+    shadowColor: '#2563eb',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.4,
+    shadowRadius: 5,
   },
   buttonDisabled: {
     opacity: 0.6,
   },
   buttonText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: '700',
+    letterSpacing: 0.5,
   },
   errorText: {
-    color: '#e74c3c',
+    color: '#ef4444',
     marginBottom: 10,
     textAlign: 'center',
+    fontWeight: '600',
   },
   registerText: {
-    color: '#1abc9c',
+    color: '#38bdf8',
     textAlign: 'center',
-    marginTop: 15,
-    textDecorationLine: 'underline',
+    marginTop: 20,
+    fontWeight: '600',
+    textDecorationLine: 'none',
   },
 });
 
