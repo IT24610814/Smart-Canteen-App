@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "Smart Canteen",
+    "slug": "smart-canteen",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTabletMode": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.smartcanteen.mobile"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to upload profile pictures and food items.",
+          "cameraPermission": "The app accesses your camera to capture food photos."
+        }
+      ]
+    ]
+  }
+}
