@@ -1,0 +1,23 @@
+============================================
+              SMART CANTEEN SYSTEM         
+                  Receipt                  
+============================================
+Order ID: ORD030
+Transaction ID: TRX027
+Date: 4/20/2026, 2:45:10 PM
+Payment Method: Cash
+--------------------------------------------
+Items:
+  dd x2  Rs. 200.00
+  aaj x1  Rs. 50.00
+--------------------------------------------
+Subtotal           : Rs. 250.00
+Seasonal Discount  : -Rs. 25.00
+Total Savings      : -Rs. 25.00
+============================================
+FINAL AMOUNT       : Rs. 225.00
+Amount Received    : Rs. 225.00
+Change             : Rs. 0.00
+============================================
+         Thank you for your order!          
+============================================
